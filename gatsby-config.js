@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/write`,
   siteMetadata: {
     title: `write.cubbk`,
     author: {
@@ -6,7 +7,7 @@ module.exports = {
       summary: '',
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://write.cubbk.github.io/`,
+    siteUrl: `https://cubbk.github.io/write`,
     social: {
       twitter: `cubbkd`,
     },
