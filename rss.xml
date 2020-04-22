@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[write.cubbk]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://cubbk.github.io/write</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 22 Apr 2020 22:40:00 GMT</lastBuildDate><item><title><![CDATA[Arma 3 -Porting Antistasi To Another Map]]></title><description><![CDATA[It all started when I wanted to see what takes to play Antistasi on another map not supported by the developers. This is a post with the…]]></description><link>https://cubbk.github.io/write/porting-antistasi-to-another-map/</link><guid isPermaLink="false">https://cubbk.github.io/write/porting-antistasi-to-another-map/</guid><pubDate>Wed, 22 Apr 2020 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;It all started when I wanted to see what takes to play Antistasi on another map not supported by the developers. This is a post with the steps required and all the pitfalls I encountered in the process. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&quot;http://www.armaholic.com/page.php?id=16369&quot;&gt;PBOManager&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go to &lt;code class=&quot;language-text&quot;&gt;path where the game is installed\Arma 3\MPMissions&lt;/code&gt; and extract the pbo mission(I’m using the Malden version but it doesn’t really matter) &lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/82c0d8a0a5c33fbc9307002654d6b0e2/9eaa0/pbo-extract.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 20.945945945945947%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAA2UlEQVQY0zWP606EMBSEef9XU/+Q6Iqru7ClLXdabosR+TxUPclkejrpl2l0ik88JJqns+FR/NUMvOmW5KrQVY+pHbbxIkfezrzXd55Vy4e4niGxAy95z7mcUANEndVUZck0jizLwr5tXKuOJElQt4xxGJinUdzjXU9dVRRFEe7X9Y73jq7v8bIfE33vO5tA/kdWMtuiVI7WGmNMADjngtIs43K5kKZpyOu6xh25tWzrSiSIP9D+KznfBBbHsUBVeFRJq6Zp6Lou/MJ7zyCNDj/0KQ2/BLxL9gOpYy2z+tZgWAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;extract pbo&quot;
+        title=&quot;extract pbo&quot;
+        src=&quot;/static/82c0d8a0a5c33fbc9307002654d6b0e2/fcda8/pbo-extract.png&quot;
+        srcset=&quot;/static/82c0d8a0a5c33fbc9307002654d6b0e2/12f09/pbo-extract.png 148w,
+/static/82c0d8a0a5c33fbc9307002654d6b0e2/e4a3f/pbo-extract.png 295w,
+/static/82c0d8a0a5c33fbc9307002654d6b0e2/fcda8/pbo-extract.png 590w,
+/static/82c0d8a0a5c33fbc9307002654d6b0e2/efc66/pbo-extract.png 885w,
+/static/82c0d8a0a5c33fbc9307002654d6b0e2/c83ae/pbo-extract.png 1180w,
+/static/82c0d8a0a5c33fbc9307002654d6b0e2/9eaa0/pbo-extract.png 1676w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Rename the extracted folder from &lt;code class=&quot;language-text&quot;&gt;Antistasi - Malden.Malden&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;Antistasi - Malden.NewMapName&lt;/code&gt;, in my case it was &lt;code class=&quot;language-text&quot;&gt;Antistasi - Malden.Angel&lt;/code&gt;. If you don’t know how your map is named: go in the game, open the map in editor, save a scenario and look up the filename which was saved.&lt;/li&gt;
+&lt;li&gt;IMPORTANT. Move the folder from  &lt;code class=&quot;language-text&quot;&gt;path where the game is installed\Arma 3\MPMissions&lt;/code&gt; to &lt;code class=&quot;language-text&quot;&gt;C:\Users\username\Documents\Arma 3\MPMissions&lt;/code&gt;, otherwise the entities will not load up when trying to edit the scenario in eden&lt;/li&gt;
+&lt;li&gt;Open the game =&gt; host server =&gt; choose the new map =&gt; choose the green scenario and press the &lt;code class=&quot;language-text&quot;&gt;3d editor&lt;/code&gt; button. The other ways don’t work, for example if trying to open the scenario straight from the editor if fails with a strange popup.&lt;/li&gt;
+&lt;li&gt;Everything else, like the owl meme :D&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item></channel></rss>
